@@ -84,12 +84,10 @@ public class Main {
         System.out.println("# INSTRUCTION");
         System.out.println("# Single: C-1");
         System.out.println("# Multiple (Separate by comma) : C-1, C-2");
-        //System.out.print("> Please select available seat: ");
-        //String hallAInput = scanner.nextLine().replaceAll("\\s", "");
         // regex
         //String userBooking = validate("^\\s*[A-Za-z]\\s*-\\s*(?!0)\\d+\\s*(,\\s*[A-Za-z]\\s*-\\s*(?!0)\\d+\\s*)*$\n", "selectSeat");
         System.out.print("➡️ Please select available seat: ");
-        String userBooking = scanner.nextLine();
+        String userBooking = scanner.nextLine().replaceAll("\\s", "");
         String[] seats = userBooking.toUpperCase().split(",");
 
         // check seat fo available or not
@@ -205,6 +203,7 @@ public class Main {
             no++;
         }
         if (isBooking) System.out.println("Booking successfully ...!");
+        scanner.nextLine();
     }
 
     public static void showHistory(String[] history) {
