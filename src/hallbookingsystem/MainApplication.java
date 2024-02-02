@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Main {
+public class MainApplication {
     static Scanner scanner = new Scanner(System.in);
     static int row = 0, seat = 0;
     static int historyIndex = 0;
@@ -31,7 +31,7 @@ public class Main {
         System.out.println("★".repeat(40));
         row = Integer.parseInt(validate("^(1[0-9]?|2[0-6]?|[3-9])$", "row"));
         seat = Integer.parseInt(validate("^(1[0-9]?|2[0-6]?|3[0]?|[4-9])$", "seat"));
-        System.out.println("Created hall successfully with " + (row * seat) + " seats in hall");
+        System.out.println("\uD83C\uDF89 Created hall successfully with " + (row * seat) + " seats in hall");
     }
 
     public static void index(String[][] hallA, String[][] hallB, String[][] hallC, String[] history, String[] found) {
@@ -46,7 +46,10 @@ public class Main {
                 case "C", "c" -> showTime();
                 case "D", "d" -> reboot(hallA, hallB, hallC, history);
                 case "E", "e" -> showHistory(history);
-                case "F", "f" -> System.exit(0);
+                case "F", "f" -> {
+                    System.out.println("\uD83D\uDE4F\uD83C\uDFFB Thank you \uD83D\uDE4F\uD83C\uDFFB");
+                    System.exit(0);
+                }
             }
         }
     }
